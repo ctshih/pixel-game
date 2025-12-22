@@ -1,6 +1,6 @@
 # Pixel Art Quiz Game (像素風問答遊戲)
 
-這是一個使用 React + Vite 開發的像素風格問答遊戲，結合 Google Sheets 作為後端資料庫，透過 Google Apps Script (GAS) 進行資料存取。
+這是一個使用 React + Vite 開發的像素風格問答測試遊戲，結合 Google Sheets 作為後端資料庫，透過 Google Apps Script (GAS) 進行資料存取。
 
 ## ✨ 特色
 - 🎨 **Pixel Art 風格**：復古街機視覺設計。
