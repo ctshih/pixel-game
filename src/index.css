@@ -1,0 +1,83 @@
+:root {
+  /* Pixel Art Palette - Retro Computer Style */
+  --pixel-bg: #202028; /* Dark Grey */
+  --pixel-fg: #dcdccc; /* Cream/White */
+  --pixel-primary: #ffcc00; /* Gold/Yellow for accents */
+  --pixel-secondary: #0088cc; /* Retro Blue */
+  --pixel-accent: #cc4444; /* Retro Red */
+  --pixel-success: #44cc44; /* Retro Green */
+  
+  --pixel-font: 'Press Start 2P', system-ui, monospace;
+  
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  
+  --border-width: 4px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--pixel-bg);
+  color: var(--pixel-fg);
+  font-family: var(--pixel-font);
+  image-rendering: pixelated; /* Essential for pixel art feel */
+  -webkit-font-smoothing: none; /* Make fonts sharp */
+}
+
+/* NES-style container box */
+.pixel-box {
+  background: var(--pixel-bg);
+  border-style: solid;
+  border-width: var(--border-width);
+  border-color: var(--pixel-fg);
+  box-shadow: 
+    -4px -4px 0 var(--pixel-bg), 
+    4px -4px 0 var(--pixel-bg), 
+    -4px 4px 0 var(--pixel-bg), 
+    4px 4px 0 var(--pixel-bg);
+  position: relative;
+  padding: var(--spacing-md);
+  margin: var(--spacing-md);
+}
+
+/* Simulate rounded corners with pixels */
+.pixel-box::before {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--pixel-fg);
+  z-index: 1;
+  pointer-events: none;
+  box-shadow: 0 calc(100% + 4px) 0 var(--pixel-fg); /* Bottom border */
+}
+
+.pixel-box::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -4px;
+  width: 4px;
+  background: var(--pixel-fg);
+  z-index: 1;
+  pointer-events: none;
+  box-shadow: calc(100% + 4px) 0 0 var(--pixel-fg); /* Right border */
+}
+
+/* Utility to hide scrollbars */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
